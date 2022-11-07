@@ -27,7 +27,7 @@ func main() {
 	getArgsCli := os.Args
 	secondArgs := getArgsCli[1]
 
-	var whichIndex int
+	var whichIndex int = -1
 
 	for i, name := range names {
 		if name == strings.ToLower(secondArgs) {
@@ -43,5 +43,9 @@ func main() {
 			fmt.Println("Title : ", data.title)
 			fmt.Println("Reason : ", data.reason)
 		}
+	}
+
+	if whichIndex == -1 {
+		fmt.Println("data not found")
 	}
 }
